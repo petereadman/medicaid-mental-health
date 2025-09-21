@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicaid Mental Health Research - Economist Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Milo:wght@400;600;700&family=Officina+Sans:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Source Serif Pro', serif;
+            background: #f6f6f6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 2px;
+            padding: 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            max-width: 600px;
+            width: 100%;
+            border-top: 4px solid #e3120b;
+        }
+        
+        .header {
+            margin-bottom: 24px;
+        }
+        
+        .kicker {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #e3120b;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-family: sans-serif;
+        }
+        
+        .headline {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        
+        .subhead {
+            font-size: 16px;
+            color: #333;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        
+        .byline {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .chart-section {
+            margin: 24px 0;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        
+        .chart-subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .chart {
+            width: 100%;
+            height: 280px;
+            margin-bottom: 12px;
+        }
+        
+        .axis {
+            stroke: #999;
+            stroke-width: 0.5;
+        }
+        
+        .axis-label {
+            font-family: sans-serif;
+            font-size: 10px;
+            fill: #666;
+        }
+        
+        .grid-line {
+            stroke: #e6e6e6;
+            stroke-width: 0.5;
+        }
+        
+        .zero-line {
+            stroke: #333;
+            stroke-width: 1;
+        }
+        
+        .boxplot {
+            fill: #74c0fc;
+            stroke: #1971c2;
+            stroke-width: 1;
+            opacity: 0.8;
+        }
+        
+        .boxplot-median {
+            stroke: #1a1a1a;
+            stroke-width: 1.5;
+        }
+        
+        .boxplot-outlier {
+            fill: #e3120b;
+            opacity: 0.8;
+        }
+        
+        .source-note {
+            font-size: 10px;
+            color: #999;
+            font-family: sans-serif;
+            text-align: right;
+            margin-top: 8px;
+        }
+        
+        .key-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 16px;
+            background: #f8f8f8;
+            border-left: 3px solid #e3120b;
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            font-family: sans-serif;
+            margin-top: 4px;
+        }
+        
+        .analysis {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .analysis-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        
+        .methodology {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+            padding: 12px;
+            background: #f8f8f8;
+            border-radius: 2px;
+        }
+        
+        .red-accent {
+            color: #e3120b;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="kicker">Healthcare Policy</div>
+            <h1 class="headline">Medicaid's mental-health benefits kick in early—but only for the poorest</h1>
+            <div class="subhead">Insurance coverage shows heterogeneous effects within six months, concentrated among most vulnerable recipients</div>
+            <div class="byline">Research by Peter Readman, Hunter College CUNY</div>
+        </div>
+        
+        <div class="key-stats">
+            <div class="stat">
+                <span class="stat-number">+0.006</span>
+                <div class="stat-label">Effect for $0 income</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">-0.019</span>
+                <div class="stat-label">Effect for $20K+ income</div>
+            </div>
+            <div class="stat">
+                <span class="stat-number">5,635</span>
+                <div class="stat-label">Participants analyzed</div>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-title">Treatment effects vary sharply by income level</div>
+            <div class="chart-subtitle">Conditional average treatment effects on mental health, by annual household income, $'000</div>
+            
+            <svg class="chart" viewBox="0 0 600 280">
+                <!-- Grid lines -->
+                <line x1="60" y1="40" x2="60" y2="240" class="axis"/>
+                <line x1="60" y1="240" x2="540" y2="240" class="axis"/>
+                
+                <!-- Y-axis grid -->
+                <line x1="60" y1="60" x2="540" y2="60" class="grid-line"/>
+                <line x1="60" y1="100" x2="540" y2="100" class="grid-line"/>
+                <line x1="60" y1="140" x2="540" y2="140" class="grid-line"/>
+                <line x1="60" y1="180" x2="540" y2="180" class="grid-line"/>
+                <line x1="60" y1="220" x2="540" y2="220" class="grid-line"/>
+                
+                <!-- Zero line -->
+                <line x1="60" y1="140" x2="540" y2="140" class="zero-line"/>
+                
+                <!-- Y-axis labels -->
+                <text x="55" y="65" text-anchor="end" class="axis-label">0.08</text>
+                <text x="55" y="105" text-anchor="end" class="axis-label">0.04</text>
+                <text x="55" y="145" text-anchor="end" class="axis-label">0.00</text>
+                <text x="55" y="185" text-anchor="end" class="axis-label">-0.04</text>
+                <text x="55" y="225" text-anchor="end" class="axis-label">-0.08</text>
+                
+                <!-- Boxplots -->
+                
+                <!-- $0 -->
+                <rect x="75" y="110" width="20" height="60" class="boxplot"/>
+                <line x1="75" y1="125" x2="95" y2="125" class="boxplot-median"/>
+                <circle cx="85" cy="95" r="2" class="boxplot-outlier"/>
+                
+                <!-- $1-2.5K -->
+                <rect x="115" y="115" width="20" height="55" class="boxplot"/>
+                <line x1="115" y1="130" x2="135" y2="130" class="boxplot-median"/>
+                
+                <!-- $2.5-5K -->
+                <rect x="155" y="125" width="20" height="45" class="boxplot"/>
+                <line x1="155" y1="140" x2="175" y2="140" class="boxplot-median"/>
+                
+                <!-- $5-7.5K -->
+                <rect x="195" y="130" width="20" height="40" class="boxplot"/>
+                <line x1="195" y1="145" x2="215" y2="145" class="boxplot-median"/>
+                
+                <!-- $7.5-10K -->
+                <rect x="235" y="135" width="20" height="35" class="boxplot"/>
+                <line x1="235" y1="150" x2="255" y2="150" class="boxplot-median"/>
+                
+                <!-- $10-12.5K -->
+                <rect x="275" y="140" width="20" height="30" class="boxplot"/>
+                <line x1="275" y1="155" x2="295" y2="155" class="boxplot-median"/>
+                
+                <!-- $12.5-15K -->
+                <rect x="315" y="145" width="20" height="25" class="boxplot"/>
+                <line x1="315" y1="158" x2="335" y2="158" class="boxplot-median"/>
+                
+                <!-- $15-17.5K -->
+                <rect x="355" y="150" width="20" height="20" class="boxplot"/>
+                <line x1="355" y1="160" x2="375" y2="160" class="boxplot-median"/>
+                
+                <!-- $17.5-20K -->
+                <rect x="395" y="155" width="20" height="15" class="boxplot"/>
+                <line x1="395" y1="163" x2="415" y2="163" class="boxplot-median"/>
+                
+                <!-- $20K+ -->
+                <rect x="435" y="160" width="20" height="30" class="boxplot"/>
+                <line x1="435" y1="175" x2="455" y2="175" class="boxplot-median"/>
+                <circle cx="445" cy="200" r="2" class="boxplot-outlier"/>
+                
+                <!-- X-axis labels -->
+                <text x="85" y="255" text-anchor="middle" class="axis-label">0</text>
+                <text x="125" y="255" text-anchor="middle" class="axis-label">1-2.5</text>
+                <text x="165" y="255" text-anchor="middle" class="axis-label">2.5-5</text>
+                <text x="205" y="255" text-anchor="middle" class="axis-label">5-7.5</text>
+                <text x="245" y="255" text-anchor="middle" class="axis-label">7.5-10</text>
+                <text x="285" y="255" text-anchor="middle" class="axis-label">10-12.5</text>
+                <text x="325" y="255" text-anchor="middle" class="axis-label">12.5-15</text>
+                <text x="365" y="255" text-anchor="middle" class="axis-label">15-17.5</text>
+                <text x="405" y="255" text-anchor="middle" class="axis-label">17.5-20</text>
+                <text x="445" y="255" text-anchor="middle" class="axis-label">20+</text>
+            </svg>
+            
+            <div class="source-note">Source: Oregon Health Insurance Experiment; causal forest analysis</div>
+        </div>
+        
+        <div class="analysis">
+            <div class="analysis-text">
+                This study challenges conventional wisdom about <span class="red-accent">when</span> Medicaid's mental-health benefits begin. Using causal forest methodology on the Oregon Health Insurance Experiment, the research reveals that positive effects emerge within six months—but only for the most economically vulnerable recipients.
+            </div>
+            
+            <div class="methodology">
+                <strong>Methodology:</strong> Causal forest analysis of 5,635 participants from baseline and six-month OHIE surveys. Mental health measured using standardized proxy combining depression diagnosis, mental health days, and general health status. Income emerged as third most important predictor of treatment heterogeneity.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
